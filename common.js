@@ -9,8 +9,16 @@ function convertstr (num){
 }
 
 function show(arr){
-    let parent=document.getElementsByClassName('par');
-   for (let i = 0; i < parent.length; i++) {
-        console.log(parent[i]);
+    let parents=document.getElementsByClassName('par');
+    for (let i = 0; i < parents.length; i++) {
+         parents[i].classList.add('hidden');
+    }
+   for (let i = 0; i < parents.length; i++) {
+         const ind=parents[i].querySelector('.cnt');
+         
+         let index=convertnum(ind.innerText);
+         console.log(index);
+         console.log(arr[index]);
+         if(arr[index]==1)parents[i].classList.remove('hidden');
     }
 }

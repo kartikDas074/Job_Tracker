@@ -1,6 +1,6 @@
-const accept= new Array(8).fill(0);
-const reject= new Array(8).fill(0);
-const total =  new Array(8).fill(1);
+const accept= new Array(9).fill(0);
+const reject= new Array(9).fill(0);
+const total =  new Array(9).fill(1);
 
 document.addEventListener("click", function (e) {
   // action for clicking on interview button
@@ -62,25 +62,107 @@ document.addEventListener("click", function (e) {
     reject[index]=1;
     }
 });
-
+//All job
 document.getElementById('Alljob').addEventListener("click",
     function (){
         // get the all job bar
         let idget=document.getElementById('Alljob');
+        let pdget=document.getElementById('intjob');
+        let cdget=document.getElementById('retjob');
         // color change
-        idget.style.backgroundColor='blue';
-        idget.style.color='#FFFFFF';
+        idget.classList.add('change');
+        pdget.classList.add('change');
+        cdget.classList.add('change');
+        pdget.classList.remove('change');
+        cdget.classList.remove('change');
         // cheak if any job is available
-        let getjobdet=document.getElementById('jobcount');
+        let getjobdet=document.getElementById('tot');
         let jobcount=convertnum(getjobdet.innerText);
+         getjobdet=document.getElementById('jobcount');
+         getjobdet.innerText=convertstr(jobcount);
         if(jobcount==0){
             let no_job=document.getElementById('nojob');
             no_job.classList.remove('hidden');
+             show(total);
             return;
+        }else{
+            let no_job=document.getElementById('nojob');
+            no_job.classList.add('hidden');
         }
+        
         //show the needed one
         show(total);
 
     }
 )
 
+//Interview
+document.getElementById('intjob').addEventListener("click",
+    function (){
+        // get the all job bar
+        let idget=document.getElementById('Alljob');
+        let pdget=document.getElementById('intjob');
+        let cdget=document.getElementById('retjob');
+        
+        // color change
+         idget.classList.add('change');
+        pdget.classList.add('change');
+        cdget.classList.add('change');
+        idget.classList.remove('change');
+        cdget.classList.remove('change');
+        // cheak if any job is available
+        let getjobdet=document.getElementById('interview');
+        let jobcount=convertnum(getjobdet.innerText);
+         getjobdet=document.getElementById('jobcount');
+         getjobdet.innerText=convertstr(jobcount);
+        if(jobcount==0){
+            let no_job=document.getElementById('nojob');
+            no_job.classList.remove('hidden');
+             show(accept);
+            return;
+        }else{
+            let no_job=document.getElementById('nojob');
+            no_job.classList.add('hidden');
+        }
+        
+        //show the needed one
+        show(accept);
+
+    }
+    
+)
+
+//Rejection
+document.getElementById('retjob').addEventListener("click",
+    function (){
+        // get the all job bar
+        let idget=document.getElementById('Alljob');
+        let pdget=document.getElementById('intjob');
+        let cdget=document.getElementById('retjob');
+        // color change
+        idget.classList.add('change');
+        pdget.classList.add('change');
+        cdget.classList.add('change');
+        idget.classList.remove('change');
+        pdget.classList.remove('change');
+        // cheak if any job is available
+        let getjobdet=document.getElementById('reject');
+        let jobcount=convertnum(getjobdet.innerText);
+         getjobdet=document.getElementById('jobcount');
+         getjobdet.innerText=convertstr(jobcount);
+        if(jobcount==0){
+            let no_job=document.getElementById('nojob');
+            no_job.classList.remove('hidden');
+            show(reject);
+            return;
+        }else{
+            let no_job=document.getElementById('nojob');
+            no_job.classList.add('hidden');
+        }
+        
+        //show the needed one
+        show(reject);
+
+    }
+    
+)
