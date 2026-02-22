@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job tracker</title>
+    <!-- Tailwind + Daisy Ui setup -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+     <!-- Font awesome setup -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      
+      <!-- Add Font Geist -->
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+       <!-- CSS style -->
+        <style>
+            *{
+             font-family: "Geist", sans-serif;
+             
+            }
+        </style>
+
+</head>
+<body class="bg-base-200 min-h-screen">
+      <header class=" w-[80vw] mx-auto py-[6vh] md:py-[10vh] ">
+        <h1 class=" text-[#002C5C] font-bold text-[1.5rem] sm:text-[2rem] md:text-[32px]">
+            Job Application Tracker
+        </h1>
+      </header>
+      <section class=" w-[80vw] mx-auto grid grid-cols-1 md:grid-cols-3 gap-[16px] py-[10px] md:py-[25px]">
+        <div class="btn flex-col h-full py-[10px] px-[10px] btn-soft items-start bg-[#FFFFFF] rounded-[10px] md:rounded-2xl">
+            <h1 class=" font-medium text-[16px] text-[#323B49]">Total</h1>
+            <p class=" text-[1.2rem] sm:text-[1.5rem] md-[24px] text-[#002C5C] font-bold">8</p>
+        </div>
+        <div class="btn flex-col h-full py-[10px] px-[10px] btn-soft items-start bg-[#FFFFFF] rounded-[10px] md:rounded-2xl">
+            <h1 class=" font-medium text-[16px] text-[#323B49]">Accepted</h1>
+            <p class=" text-[1.2rem] sm:text-[1.5rem] md-[24px] text-[#10B981] font-bold">0</p>
+        </div>
+        <div class="btn flex-col h-full py-[10px] px-[10px] btn-soft items-start bg-[#FFFFFF] rounded-[10px] md:rounded-2xl">
+            <h1 class=" font-medium text-[16px] text-[#323B49]">Rejected</h1>
+            <p class=" text-[1.2rem] sm:text-[1.5rem] md-[24px] text-[#EF4444] font-bold">0</p>
+        </div>
+      </section>
+      <div class="w-[80vw] mx-auto [border-solid border-[1px] border-black/10 my-[10px] md:my-[25px]"></div>
+      <section class=" w-[80vw] mx-auto py-[6vh] md:py-[10vh] ">
+        <div class=" flex justify-between items-center">
+            <h1 class=" text-[#002C5C] font-bold text-[1.5rem] sm:text-[1.5rem] md:text-[2rem]">Available Jobs</h1>
+            <p class=" text-[16px] text-black/50">8 Jobs</p>
+        </div>
+        <div class=" flex flex-col justify-center md:justify-start items-center md:items-start md:flex-row gap-[10px] my-[20px]">
+            <div class="btn btn-soft text-[#64748B] font-medium px-[10px] py-[30px] w-[60vw] md:w-[150px] bg-[#FFFFFF] text-[20px] shadow-lg rounded-[8px]">ALL</div>
+            <div class="btn btn-soft text-[#64748B] font-medium px-[10px] py-[30px] w-[60vw] md:w-[150px] bg-[#FFFFFF] text-[20px] shadow-lg rounded-[8px]">Interview</div>
+            <div class="btn btn-soft text-[#64748B] font-medium px-[10px] py-[30px] w-[60vw] md:w-[150px] bg-[#FFFFFF] text-[20px] shadow-lg rounded-[8px]">Rejected</div>
+        </div>
+      </section>
+</body>
+</html>

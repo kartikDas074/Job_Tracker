@@ -39,9 +39,9 @@
     - Will increase the the count of interview in Dashboard 
 
 - Clicking on Rejected button on the card 
-    - will add the data on Rejected tab 
-    - add the status as Rejected.
-    - Will increase the the count of Rejected in Dashboard
+    - will a
+    - Will increase the the coundd the data on Rejected tab 
+    - add the status as Rejected.t of Rejected in Dashboard
 
 - Enable toggle between Interview and rejected button(you can select Rejected button after clicking on Interview, and Interview button after clicking on Rejected button). It will change the tab and dashboard count also. It will show tab wise jobs count on the right.
 
