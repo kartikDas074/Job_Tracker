@@ -84,7 +84,7 @@ document.addEventListener("click", function (e) {
      if(tok){
       show_id('tot',total);
      }else if(aok){
-        show_id('accept',accept);
+        show_id('interview',accept);
      }else{
         show_id('reject',reject);
      }
