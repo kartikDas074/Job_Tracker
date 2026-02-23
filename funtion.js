@@ -55,7 +55,7 @@ document.addEventListener("click", function (e) {
     const togol=par.querySelector('.tog');
     //3. Update the togole
     if(togol!=null)
-    updateinText('REJECT',togol);
+    updateinText('REJECTED',togol);
     //4. get job's index
     const ind=par.querySelector('.cnt');
     let index=convertnum(ind.innerText);
