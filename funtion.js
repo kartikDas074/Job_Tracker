@@ -2,6 +2,18 @@ const accept= new Array(9).fill(0);
 const reject= new Array(9).fill(0);
 const total =  new Array(9).fill(1);
 let tok=true,aok=false,bok=false;
+if(tok){
+     // get the all job bar
+        let idget=document.getElementById('Alljob');
+        let pdget=document.getElementById('intjob');
+        let cdget=document.getElementById('retjob');
+        // color change
+        idget.classList.add('change');
+        pdget.classList.add('change');
+        cdget.classList.add('change');
+        pdget.classList.remove('change');
+        cdget.classList.remove('change');
+}
 document.addEventListener("click", function (e) {
   // action for clicking on interview button
   if (e.target.classList.contains("interview")) {
