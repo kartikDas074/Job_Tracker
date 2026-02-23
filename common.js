@@ -15,10 +15,7 @@ function show(arr){
     }
    for (let i = 0; i < parents.length; i++) {
          const ind=parents[i].querySelector('.cnt');
-         
          let index=convertnum(ind.innerText);
-         console.log(index);
-         console.log(arr[index]);
          if(arr[index]==1)parents[i].classList.remove('hidden');
     }
 }
@@ -41,7 +38,6 @@ function decrese(id){
 
 function show_id(id,arr){
         let jobcount=jobcountchange(id);
-        console.log(jobcount);
         if(jobcount==0){
             let no_job=document.getElementById('nojob');
             no_job.classList.remove('hidden');

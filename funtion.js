@@ -31,6 +31,9 @@ document.addEventListener("click", function (e) {
     //6. Update array
     accept[index]=1;
     reject[index]=0;
+    if(bok){
+        show_id('reject',reject);
+    }
       }
    // action for clicking on Reject button 
      if (e.target.classList.contains("reject")) {
@@ -60,6 +63,9 @@ document.addEventListener("click", function (e) {
     //6. Update array
     accept[index]=0;
     reject[index]=1;
+    if(aok){
+        show_id('interview',accept);
+    }
     }
     if (e.target.classList.contains("delme")){
      // 1.parent find
