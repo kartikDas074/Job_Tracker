@@ -1,7 +1,7 @@
 const accept= new Array(9).fill(0);
 const reject= new Array(9).fill(0);
 const total =  new Array(9).fill(1);
-
+let tok=true,aok=false,bok=false;
 document.addEventListener("click", function (e) {
   // action for clicking on interview button
   if (e.target.classList.contains("interview")) {
@@ -61,10 +61,42 @@ document.addEventListener("click", function (e) {
     accept[index]=0;
     reject[index]=1;
     }
+    if (e.target.classList.contains("delme")){
+     // 1.parent find
+     const par = e.target.closest(".par");
+     //2. get job's index
+     const ind=par.querySelector('.cnt');
+     let index=convertnum(ind.innerText);
+     par.classList.add('hidden');
+     if(accept[index]==1){
+         decrese('interview');
+     }
+     if(reject[index]==1){
+        decrese('reject');
+     }
+     if(total[index]==1){
+        decrese('tot');
+     }
+     total[index]=2;
+     accept[index]=2;
+     reject[index]=2;
+     //show after deleting
+     if(tok){
+      show_id('tot',total);
+     }else if(aok){
+        show_id('accept',accept);
+     }else{
+        show_id('reject',reject);
+     }
+    }
 });
 //All job
 document.getElementById('Alljob').addEventListener("click",
     function (){
+        //Active the tok 
+        tok=true;
+        aok=false;
+        bok=false;
         // get the all job bar
         let idget=document.getElementById('Alljob');
         let pdget=document.getElementById('intjob');
@@ -75,23 +107,8 @@ document.getElementById('Alljob').addEventListener("click",
         cdget.classList.add('change');
         pdget.classList.remove('change');
         cdget.classList.remove('change');
-        // cheak if any job is available
-        let getjobdet=document.getElementById('tot');
-        let jobcount=convertnum(getjobdet.innerText);
-         getjobdet=document.getElementById('jobcount');
-         getjobdet.innerText=convertstr(jobcount);
-        if(jobcount==0){
-            let no_job=document.getElementById('nojob');
-            no_job.classList.remove('hidden');
-             show(total);
-            return;
-        }else{
-            let no_job=document.getElementById('nojob');
-            no_job.classList.add('hidden');
-        }
-        
-        //show the needed one
-        show(total);
+        // cheak if any job is available+show
+        show_id('tot',total);
 
     }
 )
@@ -99,6 +116,10 @@ document.getElementById('Alljob').addEventListener("click",
 //Interview
 document.getElementById('intjob').addEventListener("click",
     function (){
+        //Active the aok 
+        tok=false;
+        aok=true;
+        bok=false;
         // get the all job bar
         let idget=document.getElementById('Alljob');
         let pdget=document.getElementById('intjob');
@@ -110,23 +131,8 @@ document.getElementById('intjob').addEventListener("click",
         cdget.classList.add('change');
         idget.classList.remove('change');
         cdget.classList.remove('change');
-        // cheak if any job is available
-        let getjobdet=document.getElementById('interview');
-        let jobcount=convertnum(getjobdet.innerText);
-         getjobdet=document.getElementById('jobcount');
-         getjobdet.innerText=convertstr(jobcount);
-        if(jobcount==0){
-            let no_job=document.getElementById('nojob');
-            no_job.classList.remove('hidden');
-             show(accept);
-            return;
-        }else{
-            let no_job=document.getElementById('nojob');
-            no_job.classList.add('hidden');
-        }
-        
-        //show the needed one
-        show(accept);
+        // cheak if any job is available+show
+         show_id('interview',accept);
 
     }
     
@@ -135,6 +141,10 @@ document.getElementById('intjob').addEventListener("click",
 //Rejection
 document.getElementById('retjob').addEventListener("click",
     function (){
+        //Active the tok 
+        tok=false;
+        aok=false;
+        bok=true;
         // get the all job bar
         let idget=document.getElementById('Alljob');
         let pdget=document.getElementById('intjob');
@@ -145,23 +155,8 @@ document.getElementById('retjob').addEventListener("click",
         cdget.classList.add('change');
         idget.classList.remove('change');
         pdget.classList.remove('change');
-        // cheak if any job is available
-        let getjobdet=document.getElementById('reject');
-        let jobcount=convertnum(getjobdet.innerText);
-         getjobdet=document.getElementById('jobcount');
-         getjobdet.innerText=convertstr(jobcount);
-        if(jobcount==0){
-            let no_job=document.getElementById('nojob');
-            no_job.classList.remove('hidden');
-            show(reject);
-            return;
-        }else{
-            let no_job=document.getElementById('nojob');
-            no_job.classList.add('hidden');
-        }
-        
-        //show the needed one
-        show(reject);
+        // cheak if any job is available+show
+        show_id('reject',reject);
 
     }
     

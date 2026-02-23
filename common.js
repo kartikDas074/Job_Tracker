@@ -22,3 +22,34 @@ function show(arr){
          if(arr[index]==1)parents[i].classList.remove('hidden');
     }
 }
+function jobcountchange (id){
+    let getjobdet=document.getElementById(id);
+    let jobcount=convertnum(getjobdet.innerText);
+    getjobdet=document.getElementById('jobcount');
+    getjobdet.innerText=convertstr(jobcount);
+    return jobcount;
+}
+
+function decrese(id){
+         let intview=document.getElementById(id);
+         let intcount=convertnum(intview.innerText);
+         intcount-=1;
+         intview.innerText=convertstr(intcount);
+}
+
+//show the element based on id+ arr
+
+function show_id(id,arr){
+        let jobcount=jobcountchange(id);
+        console.log(jobcount);
+        if(jobcount==0){
+            let no_job=document.getElementById('nojob');
+            no_job.classList.remove('hidden');
+            show(arr);
+            return;
+        }else{
+            let no_job=document.getElementById('nojob');
+            no_job.classList.add('hidden');
+            show(arr);
+        }
+}
